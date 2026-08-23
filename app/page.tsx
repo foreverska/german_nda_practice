@@ -56,10 +56,10 @@ export default function Home() {
             }}
           >
             <option value="All">All Levels</option>
-            <option value="A1.1">A1.1</option>
-            <option value="A1.2">A1.2</option>
-            <option value="A2">A2</option>
-            <option value="B1+">B1+</option>
+            <option value="A1.1">Easy</option>
+            <option value="A1.2">Medium</option>
+            <option value="A2">Hard</option>
+            <option value="B1+">Expert</option>
           </select>
 
           <div className="text-sm text-gray-500 dark:text-gray-400 bg-white dark:bg-gray-800 px-3 py-1 rounded-full shadow-sm border border-gray-100 dark:border-gray-700 flex items-center gap-3">
