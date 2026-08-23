@@ -1,36 +1,52 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# German Grammar Flashcards (Next.js)
 
-## Getting Started
+An intelligent, interactive German grammar flashcard application built with Next.js (App Router), Zustand, and Tailwind CSS. The app uses a multi-phase learning loop and a 100% client-side Semantic Embedding Judge to intelligently evaluate English translations, providing a robust offline-first learning experience.
 
-First, run the development server:
+## Features
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+- **Multi-Phase Learning Loop:**
+  - **Phase 1 (Blanks):** Contextual grammar blanks testing declension, gender, verb conjugation, and preposition rules with smart AI-generated hints and distractors.
+  - **Phase 1.5 (Semantic Translation):** Requires the user to demonstrate complete understanding of the sentence meaning either via a drag-and-drop Word Bank or free-form English typing.
+  - **Phase 2 (Deep Dives):** AI-generated conceptual multiple-choice questions focusing on the "Why" behind the grammar rules (e.g. why a two-way preposition triggers the dative case here).
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+- **Client-Side Semantic Judge:**
+  - Uses `@xenova/transformers` (Transformers.js) running in an isolated Web Worker.
+  - Downloads a 22MB `Xenova/all-MiniLM-L6-v2` embedding model directly into the browser cache.
+  - Validates free-form English translations by computing Cosine Similarity (threshold > 0.85) against the target meaning, naturally supporting synonyms and phrasing flourishes without any API calls or server costs.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+- **Adaptive Engine:**
+  - Built with Zustand for global state management.
+  - Tracks correct/missed grammatical concepts and dynamically fetches new sentences targeting the user's weakest concepts.
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+- **Offline Dataset Generation:**
+  - Processes open-source Tatoeba sentence pairs (`scripts/processTatoeba.ts`) via the OpenAI API locally to build the `data/tatoeba_sentences.json` database.
 
-## Learn More
+- **Theming:**
+  - Fully responsive and accessible Dark/Light mode leveraging `next-themes` and Tailwind v4.
 
-To learn more about Next.js, take a look at the following resources:
+## Running Locally
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+1. Clone the repository.
+2. Install dependencies:
+   ```bash
+   npm install
+   ```
+3. Run the development server (uses Turbopack by default):
+   ```bash
+   npm run dev
+   ```
+4. Open [http://localhost:3000](http://localhost:3000)
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## Deployment
 
-## Deploy on Vercel
+This app is fully serverless and runs 100% in the browser (no backend API keys required). 
+To deploy:
+1. Push this repository to GitHub.
+2. Import the project into Vercel.
+3. No environment variables are required for the production deployment.
+4. Click **Deploy**.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## Data Generation Scripts
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+The `scripts/` directory contains tools for scraping and filtering the raw German Tatoeba dataset, evaluating vocabulary complexity, and generating the JSON database. 
+- You will need an `OPENAI_API_KEY` inside `.env.local` *only* if you wish to run `npm run process-tatoeba` locally to generate new AI-annotated sentences.
