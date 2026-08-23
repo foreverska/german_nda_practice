@@ -40,9 +40,9 @@ export default function Home() {
     <div className="min-h-screen flex flex-col items-center py-12 px-4 font-sans">
       
       <div className="w-full max-w-2xl mb-8 flex justify-between items-center">
-        <h1 className="text-2xl font-bold flex items-center gap-2 text-gray-800 dark:text-gray-100">
-          <BookOpen className="text-blue-600 dark:text-blue-400 w-6 h-6" />
-          Cases Practice
+        <h1 className="text-3xl font-extrabold flex items-center gap-3 text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-cyan-500 dark:from-blue-400 dark:to-cyan-300 drop-shadow-sm tracking-tight">
+          <BookOpen className="text-blue-600 dark:text-blue-400 w-8 h-8 drop-shadow-md" />
+          DeutschDive
         </h1>
         
         <div className="flex items-center gap-4">

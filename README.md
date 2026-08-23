@@ -1,4 +1,4 @@
-# German Grammar Flashcards (Next.js)
+# DeutschDive (Next.js)
 
 An intelligent, interactive German grammar flashcard application built with Next.js (App Router), Zustand, and Tailwind CSS. The app uses a multi-phase learning loop and a 100% client-side Semantic Embedding Judge to intelligently evaluate English translations, providing a robust offline-first learning experience.
 
