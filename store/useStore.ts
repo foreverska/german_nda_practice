@@ -36,6 +36,7 @@ interface AppState {
   completedSentences: number;
   incrementCompletedSentences: () => void;
   resetProgress: () => void;
+  resetNounProgress: () => void;
   
   // Mode
   practiceMode: 'sentences' | 'nouns';
@@ -60,6 +61,7 @@ export const useStore = create<AppState>()(
       setSelectedLevel: (level) => set({ selectedLevel: level }),
       incrementCompletedSentences: () => set((state) => ({ completedSentences: state.completedSentences + 1 })),
       resetProgress: () => set({ conceptStats: {}, missedWords: {}, nounStats: {}, nounStreak: 0, completedSentences: 0 }),
+      resetNounProgress: () => set({ nounStats: {}, nounStreak: 0 }),
       
       recordNounAttempt: (nounId, mode, isCorrect) => {
         set((state) => {

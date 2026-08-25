@@ -1,7 +1,7 @@
-import React, { useState, useEffect, useMemo } from 'react';
+import React, { useState, useEffect, useMemo, useCallback } from 'react';
 import { nouns, Noun } from '../data/nouns';
 import { cn, normalizeGerman } from '../lib/utils';
-import { HelpCircle, AlertCircle, ArrowRight, Flame, Clock, Target } from 'lucide-react';
+import { HelpCircle, AlertCircle, ArrowRight, Flame, Clock, Target, Play, Pause, RotateCcw, RefreshCw } from 'lucide-react';
 import { useStore } from '../store/useStore';
 
 const LEVEL_SIZE = 20;
@@ -16,7 +16,7 @@ const formatTime = (seconds: number) => {
 };
 
 export default function NounCard() {
-  const { nounStats, nounStreak, recordNounAttempt, demoteNounCascade } = useStore();
+  const { nounStats, nounStreak, recordNounAttempt, demoteNounCascade, resetNounProgress } = useStore();
   
   const [currentNoun, setCurrentNoun] = useState<Noun | null>(null);
   const [mode, setMode] = useState<PracticeMode>('type');
@@ -41,13 +41,29 @@ export default function NounCard() {
   const [activeLevel, setActiveLevel] = useState(1);
   const [isReviewMode, setIsReviewMode] = useState(false);
   const [sessionTime, setSessionTime] = useState(0);
+  const [isTimerRunning, setIsTimerRunning] = useState(true);
+
+  // Global keydown for Enter to speedrun
+  useEffect(() => {
+    const handleGlobalKeydown = (e: KeyboardEvent) => {
+      if (e.key === 'Enter' && (isCorrect || showAnswer)) {
+        e.preventDefault();
+        loadNext();
+      }
+    };
+    window.addEventListener('keydown', handleGlobalKeydown);
+    return () => window.removeEventListener('keydown', handleGlobalKeydown);
+  }, [isCorrect, showAnswer]); // rebind when states change
 
   useEffect(() => {
-    const interval = setInterval(() => {
-      setSessionTime(prev => prev + 1);
-    }, 1000);
+    let interval: NodeJS.Timeout;
+    if (isTimerRunning) {
+      interval = setInterval(() => {
+        setSessionTime(prev => prev + 1);
+      }, 1000);
+    }
     return () => clearInterval(interval);
-  }, []);
+  }, [isTimerRunning]);
 
   const mcqOptions = useMemo(() => {
     if (!currentNoun) return [];
@@ -55,7 +71,7 @@ export default function NounCard() {
     return opts.sort(() => Math.random() - 0.5);
   }, [currentNoun, distractors]);
 
-  const loadNext = () => {
+  const loadNext = useCallback(() => {
     let currentActiveLevel = 1;
     let pool: Noun[] = [];
     const totalLevels = Math.ceil(nouns.length / LEVEL_SIZE);
@@ -132,16 +148,23 @@ export default function NounCard() {
     setWrongMCQs(new Set());
     setSelectedGender(null);
     setWrongGenders(new Set());
-  };
+  }, [nounStats]);
 
   useEffect(() => {
     loadNext();
-  }, []); // eslint-disable-line react-hooks/exhaustive-deps
+  }, []); // Initial load only
+
+  // If nounStats changes completely (e.g. via reset), we need to reload
+  useEffect(() => {
+    if (Object.keys(nounStats).length === 0 && currentNoun) {
+      loadNext();
+    }
+  }, [nounStats, currentNoun, loadNext]);
 
   if (!currentNoun) return null;
 
   const checkTypeAnswer = () => {
-    if (isCorrect) {
+    if (isCorrect || showAnswer) {
       loadNext();
       return;
     }
@@ -208,13 +231,27 @@ export default function NounCard() {
       {/* Gamification Header */}
       <div className="bg-gray-50 dark:bg-gray-900/50 p-6 rounded-t-2xl border-b border-gray-100 dark:border-gray-700 flex flex-col gap-4">
         
-        <div className="flex justify-between items-end">
-          <div className="flex items-center gap-4">
+        <div className="flex justify-between items-start">
+          <div className="flex flex-col gap-3">
             <div className="flex flex-col">
-              <span className="text-xs font-bold text-gray-400 dark:text-gray-500 uppercase tracking-wider mb-1">Level {activeLevel} Progress</span>
-              <div className="flex items-center gap-3">
+              <span className="text-xs font-bold text-gray-400 dark:text-gray-500 uppercase tracking-wider mb-1 flex items-center gap-2">
+                Level {activeLevel} Progress
+                <button
+                  onClick={() => {
+                    if (confirm("Reset all noun mastery?")) {
+                      resetNounProgress();
+                      setSessionTime(0);
+                    }
+                  }}
+                  className="text-gray-400 hover:text-red-500 transition-colors cursor-pointer"
+                  title="Reset Noun Progress"
+                >
+                  <RefreshCw className="w-3 h-3" />
+                </button>
+              </span>
+              <div className="flex items-center gap-3 mt-1">
                 <Target className="w-5 h-5 text-blue-500" />
-                <div className="w-32 h-2.5 bg-gray-200 dark:bg-gray-700 rounded-full overflow-hidden">
+                <div className="w-32 h-2.5 bg-gray-200 dark:bg-gray-700 rounded-full overflow-hidden shadow-inner">
                   <div className="h-full bg-blue-500 transition-all duration-500" style={{ width: `${levelProgress}%` }}></div>
                 </div>
                 <span className="text-sm font-semibold text-gray-700 dark:text-gray-300">{masteredInLevel}/{LEVEL_SIZE}</span>
@@ -231,11 +268,29 @@ export default function NounCard() {
               </div>
             </div>
             
-            <div className="flex flex-col items-center">
-              <span className="text-xs font-bold text-gray-400 dark:text-gray-500 uppercase tracking-wider mb-1">Session Timer</span>
-              <div className="flex items-center gap-1 font-mono font-bold text-lg text-gray-700 dark:text-gray-300">
-                <Clock className="w-5 h-5 text-gray-400" />
+            <div className="flex flex-col items-center min-w-[90px]">
+              <span className="text-xs font-bold text-gray-400 dark:text-gray-500 uppercase tracking-wider mb-1">Timer</span>
+              <div className="flex items-center gap-1 font-mono font-bold text-lg text-gray-700 dark:text-gray-300 group relative">
+                {isTimerRunning ? (
+                  <Pause 
+                    className="w-4 h-4 text-gray-400 hover:text-blue-500 cursor-pointer transition-colors" 
+                    onClick={() => setIsTimerRunning(false)} 
+                  />
+                ) : (
+                  <Play 
+                    className="w-4 h-4 text-gray-400 hover:text-blue-500 cursor-pointer transition-colors" 
+                    onClick={() => setIsTimerRunning(true)} 
+                  />
+                )}
                 {formatTime(sessionTime)}
+                
+                <button 
+                  title="Reset Timer" 
+                  className="absolute -right-6 top-1/2 -translate-y-1/2 opacity-0 group-hover:opacity-100 transition-opacity" 
+                  onClick={() => setSessionTime(0)}
+                >
+                  <RotateCcw className="w-3 h-3 text-gray-400 hover:text-gray-600 dark:hover:text-gray-200 cursor-pointer transition-colors" />
+                </button>
               </div>
             </div>
           </div>
@@ -273,6 +328,7 @@ export default function NounCard() {
             <div className="w-full relative flex items-center gap-4">
               <input
                 type="text"
+                autoFocus
                 value={typedInput}
                 onChange={(e) => {
                   setTypedInput(e.target.value);
@@ -392,7 +448,7 @@ export default function NounCard() {
                   onClick={loadNext}
                   className="px-6 py-3 rounded-xl font-semibold transition-all flex items-center gap-2 bg-green-500 hover:bg-green-600 text-white shadow-md shadow-green-500/20"
                 >
-                  Next <ArrowRight className="w-5 h-5" />
+                  Next (Enter) <ArrowRight className="w-5 h-5" />
                 </button>
               )}
             </div>
@@ -453,7 +509,7 @@ export default function NounCard() {
                   onClick={loadNext}
                   className="px-6 py-3 rounded-xl font-semibold transition-all flex items-center gap-2 bg-green-500 hover:bg-green-600 text-white shadow-md shadow-green-500/20"
                 >
-                  Next <ArrowRight className="w-5 h-5" />
+                  Next (Enter) <ArrowRight className="w-5 h-5" />
                 </button>
               )}
             </div>
