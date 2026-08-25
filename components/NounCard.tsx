@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useMemo, useCallback } from 'react';
+import React, { useState, useEffect, useMemo, useCallback, useRef } from 'react';
 import { nouns, Noun } from '../data/nouns';
 import { cn, normalizeGerman } from '../lib/utils';
 import { HelpCircle, AlertCircle, ArrowRight, Flame, Clock, Target, Play, Pause, RotateCcw, RefreshCw } from 'lucide-react';
@@ -42,6 +42,17 @@ export default function NounCard() {
   const [isReviewMode, setIsReviewMode] = useState(false);
   const [sessionTime, setSessionTime] = useState(0);
   const [isTimerRunning, setIsTimerRunning] = useState(true);
+
+  const inputRef = useRef<HTMLInputElement>(null);
+
+  // Auto-focus input when moving to a new type card
+  useEffect(() => {
+    if (mode === 'type' && !isCorrect && !showAnswer) {
+      setTimeout(() => {
+        inputRef.current?.focus();
+      }, 10);
+    }
+  }, [mode, currentNoun, isCorrect, showAnswer]);
 
   // Global keydown for Enter to speedrun and hotkeys for MCQ/Gender
   useEffect(() => {
@@ -372,6 +383,7 @@ export default function NounCard() {
             
             <div className="w-full relative flex items-center gap-4">
               <input
+                ref={inputRef}
                 type="text"
                 autoFocus
                 value={typedInput}
