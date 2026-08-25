@@ -5,6 +5,15 @@ export function cn(...inputs: ClassValue[]) {
   return twMerge(clsx(inputs))
 }
 
+export function normalizeGerman(str: string): string {
+  let s = str.trim().toLowerCase();
+  s = s.replace(/ä/g, 'a').replace(/ae/g, 'a');
+  s = s.replace(/ö/g, 'o').replace(/oe/g, 'o');
+  s = s.replace(/ü/g, 'u').replace(/ue/g, 'u');
+  s = s.replace(/ß/g, 'ss');
+  return s;
+}
+
 export function levenshteinDistance(a: string, b: string): number {
   const matrix = [];
 

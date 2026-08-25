@@ -7,15 +7,25 @@ interface ProgressStats {
   correct: number;
 }
 
+interface NounStats {
+  mcqScore: number;
+  genderScore: number;
+  typeScore: number;
+}
+
 interface AppState {
   // Stats tracking concepts (e.g., "dative_article", "masculine_dative")
   conceptStats: Record<string, ProgressStats>;
   // Words specifically missed, tracking misses
   missedWords: Record<string, number>; // word -> count of misses
+  // Noun stats tracking
+  nounStats: Record<string, NounStats>; // nounId -> stats
   
   // Actions
   recordAttempt: (conceptTags: string[], isCorrect: boolean) => void;
   recordMissedWord: (word: string) => void;
+  recordNounAttempt: (nounId: string, mode: 'mcq' | 'gender' | 'type', isCorrect: boolean) => void;
+  
   // Level filter
   selectedLevel: 'All' | 'A1.1' | 'A1.2' | 'A2';
   setSelectedLevel: (level: 'All' | 'A1.1' | 'A1.2' | 'A2') => void;
@@ -37,6 +47,7 @@ export const useStore = create<AppState>()(
     (set, get) => ({
       conceptStats: {},
       missedWords: {},
+      nounStats: {},
       selectedLevel: 'All',
       completedSentences: 0,
       practiceMode: 'sentences',
@@ -44,7 +55,24 @@ export const useStore = create<AppState>()(
       setPracticeMode: (mode) => set({ practiceMode: mode }),
       setSelectedLevel: (level) => set({ selectedLevel: level }),
       incrementCompletedSentences: () => set((state) => ({ completedSentences: state.completedSentences + 1 })),
-      resetProgress: () => set({ conceptStats: {}, missedWords: {}, completedSentences: 0 }),
+      resetProgress: () => set({ conceptStats: {}, missedWords: {}, nounStats: {}, completedSentences: 0 }),
+      
+      recordNounAttempt: (nounId, mode, isCorrect) => {
+        set((state) => {
+          const stats = state.nounStats[nounId] || { mcqScore: 0, genderScore: 0, typeScore: 0 };
+          const newStats = { ...stats };
+          
+          if (mode === 'mcq') {
+            newStats.mcqScore = isCorrect ? newStats.mcqScore + 1 : Math.max(0, newStats.mcqScore - 1);
+          } else if (mode === 'gender') {
+            newStats.genderScore = isCorrect ? newStats.genderScore + 1 : Math.max(0, newStats.genderScore - 1);
+          } else if (mode === 'type') {
+            newStats.typeScore = isCorrect ? newStats.typeScore + 1 : Math.max(0, newStats.typeScore - 1);
+          }
+          
+          return { nounStats: { ...state.nounStats, [nounId]: newStats } };
+        });
+      },
       
       recordAttempt: (conceptTags, isCorrect) => {
         set((state) => {
