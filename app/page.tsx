@@ -64,21 +64,23 @@ export default function Home() {
             </button>
           </div>
 
-          <select 
-            className="text-sm bg-white dark:bg-gray-800 border border-gray-300 dark:border-gray-700 rounded-md py-1 px-2 shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 text-gray-900 dark:text-gray-100"
-            value={selectedLevel}
-            onChange={(e) => {
-              const level = e.target.value as any;
-              setSelectedLevel(level);
-              setCurrentSentenceId(getNextSentenceId(currentSentenceId));
-            }}
-          >
-            <option value="All">All Levels</option>
-            <option value="A1.1">Easy</option>
-            <option value="A1.2">Medium</option>
-            <option value="A2">Hard</option>
-            <option value="B1+">Expert</option>
-          </select>
+          {practiceMode === 'sentences' && (
+            <select 
+              className="text-sm bg-white dark:bg-gray-800 border border-gray-300 dark:border-gray-700 rounded-md py-1 px-2 shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 text-gray-900 dark:text-gray-100"
+              value={selectedLevel}
+              onChange={(e) => {
+                const level = e.target.value as any;
+                setSelectedLevel(level);
+                setCurrentSentenceId(getNextSentenceId(currentSentenceId));
+              }}
+            >
+              <option value="All">All Levels</option>
+              <option value="A1.1">Easy</option>
+              <option value="A1.2">Medium</option>
+              <option value="A2">Hard</option>
+              <option value="B1+">Expert</option>
+            </select>
+          )}
 
           <ThemeToggle />
         </div>

@@ -9,6 +9,14 @@ export interface Noun {
 
 export const nouns: Noun[] = [
   {
+    "id": "n998",
+    "german": "der Junge",
+    "article": "der",
+    "word": "Junge",
+    "english": "boy",
+    "emoji": "⬇️👦"
+  },
+  {
     "id": "n25",
     "german": "das Baby",
     "article": "das",
@@ -70,7 +78,7 @@ export const nouns: Noun[] = [
     "article": "das",
     "word": "Mädchen",
     "english": "girl",
-    "emoji": "👧"
+    "emoji": "⬇️👧"
   },
   {
     "id": "n260",
@@ -150,7 +158,7 @@ export const nouns: Noun[] = [
     "article": "der",
     "word": "Sohn",
     "english": "son",
-    "emoji": "👦"
+    "emoji": "👨‍👦⬅️"
   },
   {
     "id": "n253",
@@ -158,7 +166,7 @@ export const nouns: Noun[] = [
     "article": "der",
     "word": "Vater",
     "english": "father",
-    "emoji": "👨‍👦"
+    "emoji": "➡️👨‍👦"
   },
   {
     "id": "n257",
@@ -270,7 +278,7 @@ export const nouns: Noun[] = [
     "article": "die",
     "word": "Mutter",
     "english": "mother",
-    "emoji": "👩‍👧"
+    "emoji": "➡️👩‍👧"
   },
   {
     "id": "n169",
@@ -302,7 +310,7 @@ export const nouns: Noun[] = [
     "article": "die",
     "word": "Tochter",
     "english": "daughter",
-    "emoji": "👨‍👧"
+    "emoji": "👩‍👧⬅️"
   },
   {
     "id": "n246",
