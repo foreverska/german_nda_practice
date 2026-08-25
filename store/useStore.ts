@@ -24,6 +24,10 @@ interface AppState {
   incrementCompletedSentences: () => void;
   resetProgress: () => void;
   
+  // Mode
+  practiceMode: 'sentences' | 'nouns';
+  setPracticeMode: (mode: 'sentences' | 'nouns') => void;
+  
   // Next sentence logic
   getNextSentenceId: (currentId?: string) => string;
 }
@@ -35,7 +39,9 @@ export const useStore = create<AppState>()(
       missedWords: {},
       selectedLevel: 'All',
       completedSentences: 0,
+      practiceMode: 'sentences',
       
+      setPracticeMode: (mode) => set({ practiceMode: mode }),
       setSelectedLevel: (level) => set({ selectedLevel: level }),
       incrementCompletedSentences: () => set((state) => ({ completedSentences: state.completedSentences + 1 })),
       resetProgress: () => set({ conceptStats: {}, missedWords: {}, completedSentences: 0 }),

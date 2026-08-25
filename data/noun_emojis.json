@@ -1,0 +1,1274 @@
+{
+  "die Ansage": {
+    "emoji": "📢",
+    "english": "announcement"
+  },
+  "der Anschluss": {
+    "emoji": "🔗",
+    "english": "connection"
+  },
+  "die Antwort": {
+    "emoji": "❓➡️",
+    "english": "answer"
+  },
+  "die Anzeige": {
+    "emoji": "📰",
+    "english": "advert"
+  },
+  "das Apartment": {
+    "emoji": "🏢",
+    "english": "apartment"
+  },
+  "der Apfel": {
+    "emoji": "🍎",
+    "english": "apple"
+  },
+  "der Appetit": {
+    "emoji": "🍽️😋",
+    "english": "appetite"
+  },
+  "die Arbeit": {
+    "emoji": "💼",
+    "english": "work"
+  },
+  "der Arbeitsplatz": {
+    "emoji": "🏢💻",
+    "english": "workplace"
+  },
+  "der Arm": {
+    "emoji": "💪",
+    "english": "arm"
+  },
+  "der Arzt": {
+    "emoji": "👨‍⚕️",
+    "english": "doctor"
+  },
+  "die Aufgabe": {
+    "emoji": "📋",
+    "english": "task"
+  },
+  "der Aufzug": {
+    "emoji": "🛗",
+    "english": "lift"
+  },
+  "das Auge": {
+    "emoji": "👁️",
+    "english": "eye"
+  },
+  "der Ausflug": {
+    "emoji": "✈️🌄",
+    "english": "excursion"
+  },
+  "der Ausgang": {
+    "emoji": "🚪",
+    "english": "exit"
+  },
+  "die Auskunft": {
+    "emoji": "ℹ️",
+    "english": "information/details"
+  },
+  "das Ausland": {
+    "emoji": "🌍✈️",
+    "english": "abroad/overseas"
+  },
+  "der Ausländer": {
+    "emoji": "👤🌍",
+    "english": "foreigner"
+  },
+  "die Aussage": {
+    "emoji": "💬",
+    "english": "statement"
+  },
+  "der Ausweis": {
+    "emoji": "🆔",
+    "english": "identity card"
+  },
+  "das Auto": {
+    "emoji": "🚗",
+    "english": "car"
+  },
+  "die Autobahn": {
+    "emoji": "🛣️",
+    "english": "motorway"
+  },
+  "der Automat": {
+    "emoji": "🤖",
+    "english": "machine"
+  },
+  "das Baby": {
+    "emoji": "👶",
+    "english": "baby"
+  },
+  "die Bäckerei": {
+    "emoji": "🥐",
+    "english": "bakery"
+  },
+  "das Bad": {
+    "emoji": "🛁",
+    "english": "bathroom"
+  },
+  "die Bahn": {
+    "emoji": "🚆",
+    "english": "train"
+  },
+  "der Bahnhof": {
+    "emoji": "🏬🚉",
+    "english": "train station"
+  },
+  "der Bahnsteig": {
+    "emoji": "🚉",
+    "english": "platform"
+  },
+  "der Balkon": {
+    "emoji": "🌅",
+    "english": "balcony"
+  },
+  "die Banane": {
+    "emoji": "🍌",
+    "english": "banana"
+  },
+  "die Bank": {
+    "emoji": "🏦",
+    "english": "bank"
+  },
+  "der Bauch": {
+    "emoji": "🍔",
+    "english": "stomach"
+  },
+  "der Baum": {
+    "emoji": "🌳",
+    "english": "tree"
+  },
+  "der Beamte": {
+    "emoji": "👨‍✈️",
+    "english": "official"
+  },
+  "das Bein": {
+    "emoji": "🦵",
+    "english": "leg"
+  },
+  "der Beruf": {
+    "emoji": "👨‍💼",
+    "english": "profession"
+  },
+  "das Bett": {
+    "emoji": "🛏️",
+    "english": "bed"
+  },
+  "das Bier": {
+    "emoji": "🍺",
+    "english": "beer"
+  },
+  "das Bild": {
+    "emoji": "🖼️",
+    "english": "picture"
+  },
+  "die Birne": {
+    "emoji": "🍐",
+    "english": "pear"
+  },
+  "die Bitte": {
+    "emoji": "🙏",
+    "english": "request"
+  },
+  "der Bleistift": {
+    "emoji": "✏️",
+    "english": "pencil"
+  },
+  "der Blick": {
+    "emoji": "👀",
+    "english": "view"
+  },
+  "die Blume": {
+    "emoji": "🌸",
+    "english": "flower"
+  },
+  "der Bogen": {
+    "emoji": "📄",
+    "english": "sheet"
+  },
+  "der Brief": {
+    "emoji": "✉️",
+    "english": "letter"
+  },
+  "die Briefmarke": {
+    "emoji": "📬",
+    "english": "(postage) stamp"
+  },
+  "das Brot": {
+    "emoji": "🍞",
+    "english": "bread"
+  },
+  "das Brötchen": {
+    "emoji": "🥐",
+    "english": "bread roll"
+  },
+  "der Bruder": {
+    "emoji": "👨‍👦",
+    "english": "brother"
+  },
+  "das Buch": {
+    "emoji": "📖",
+    "english": "book"
+  },
+  "das Wörterbuch": {
+    "emoji": "📚",
+    "english": "dictionary"
+  },
+  "der Buchstabe": {
+    "emoji": "🔤",
+    "english": "letter (character)"
+  },
+  "der Bus": {
+    "emoji": "🚌",
+    "english": "bus"
+  },
+  "die Butter": {
+    "emoji": "🧈",
+    "english": "butter"
+  },
+  "das Café": {
+    "emoji": "☕",
+    "english": "cafe"
+  },
+  "die CD": {
+    "emoji": "💿",
+    "english": "CD"
+  },
+  "der Chef": {
+    "emoji": "👨‍💼",
+    "english": "boss"
+  },
+  "der Computer": {
+    "emoji": "💻",
+    "english": "computer"
+  },
+  "die Dame": {
+    "emoji": "👩",
+    "english": "lady"
+  },
+  "der Dank": {
+    "emoji": "🙏",
+    "english": "thanks"
+  },
+  "das Datum": {
+    "emoji": "📅",
+    "english": "date"
+  },
+  "die Disco": {
+    "emoji": "💃",
+    "english": "disco"
+  },
+  "der Doktor": {
+    "emoji": "👨‍⚕️",
+    "english": "doctor"
+  },
+  "das Doppelzimmer": {
+    "emoji": "🛏️🛏️",
+    "english": "double room"
+  },
+  "das Dorf": {
+    "emoji": "🏡",
+    "english": "village"
+  },
+  "der Drucker": {
+    "emoji": "🖨️",
+    "english": "printer"
+  },
+  "die Durchsage": {
+    "emoji": "📣",
+    "english": "announcement"
+  },
+  "der Durst": {
+    "emoji": "💧",
+    "english": "thirst"
+  },
+  "die Dusche": {
+    "emoji": "🚿",
+    "english": "shower"
+  },
+  "die Ecke": {
+    "emoji": "🛑",
+    "english": "corner"
+  },
+  "die Ehefrau": {
+    "emoji": "👩‍❤️‍👨",
+    "english": "wife"
+  },
+  "der Ehemann": {
+    "emoji": "👨‍❤️‍👩",
+    "english": "husband"
+  },
+  "das Ei": {
+    "emoji": "🥚",
+    "english": "egg"
+  },
+  "der Eingang": {
+    "emoji": "🚪",
+    "english": "entrance"
+  },
+  "die Einladung": {
+    "emoji": "✉️",
+    "english": "invitation"
+  },
+  "der Eintritt": {
+    "emoji": "🎟️",
+    "english": "entry"
+  },
+  "das Einzelzimmer": {
+    "emoji": "🛏️",
+    "english": "single room"
+  },
+  "die Eltern (pl.)": {
+    "emoji": "👨‍👩‍👦",
+    "english": "parents"
+  },
+  "die E-Mail": {
+    "emoji": "📧",
+    "english": "email"
+  },
+  "der Empfänger": {
+    "emoji": "📬",
+    "english": "recipient"
+  },
+  "das Ende": {
+    "emoji": "🔚",
+    "english": "end"
+  },
+  "das Ergebnis": {
+    "emoji": "📊",
+    "english": "result"
+  },
+  "der Erwachsene": {
+    "emoji": "🧑",
+    "english": "adult"
+  },
+  "das Essen": {
+    "emoji": "🍽️",
+    "english": "food"
+  },
+  "der Fahrer": {
+    "emoji": "🚗",
+    "english": "driver"
+  },
+  "die Fahrkarte": {
+    "emoji": "🎟️",
+    "english": "(transport) ticket"
+  },
+  "das Fahrrad": {
+    "emoji": "🚲",
+    "english": "bicycle"
+  },
+  "die Familie": {
+    "emoji": "👨‍👩‍👧‍👦",
+    "english": "family"
+  },
+  "der Familienname": {
+    "emoji": "🏷️",
+    "english": "surname"
+  },
+  "der Familienstand": {
+    "emoji": "💍",
+    "english": "family/marital status"
+  },
+  "die Farbe": {
+    "emoji": "🎨",
+    "english": "colour"
+  },
+  "das Fax": {
+    "emoji": "📠",
+    "english": "fax"
+  },
+  "der Feierabend": {
+    "emoji": "🌇",
+    "english": "end of work/home time"
+  },
+  "der Feiertag": {
+    "emoji": "🎉",
+    "english": "bank holiday"
+  },
+  "der Fehler": {
+    "emoji": "❌",
+    "english": "mistake"
+  },
+  "das Feuer": {
+    "emoji": "🔥",
+    "english": "fire"
+  },
+  "das Fieber": {
+    "emoji": "🌡️",
+    "english": "fever"
+  },
+  "der Film": {
+    "emoji": "🎬",
+    "english": "film"
+  },
+  "die Firma": {
+    "emoji": "🏢",
+    "english": "company"
+  },
+  "der Fisch": {
+    "emoji": "🐟",
+    "english": "fish"
+  },
+  "die Flasche": {
+    "emoji": "🍼",
+    "english": "bottle"
+  },
+  "das Fleisch": {
+    "emoji": "🍖",
+    "english": "meat"
+  },
+  "der Abflug": {
+    "emoji": "✈️🛫",
+    "english": "(flight) departure"
+  },
+  "der Flughafen": {
+    "emoji": "🏬",
+    "english": "airport"
+  },
+  "das Flugzeug": {
+    "emoji": "✈️",
+    "english": "aeroplane"
+  },
+  "das Foto": {
+    "emoji": "📸",
+    "english": "photograph"
+  },
+  "die Frage": {
+    "emoji": "❓",
+    "english": "question"
+  },
+  "die Frau": {
+    "emoji": "👩",
+    "english": "Ms"
+  },
+  "die Frauen": {
+    "emoji": "👩‍👩‍👧‍👦",
+    "english": "women"
+  },
+  "die Freizeit": {
+    "emoji": "🏖️",
+    "english": "free time"
+  },
+  "der Freund": {
+    "emoji": "👨‍🤝‍👨",
+    "english": "friend"
+  },
+  "die Freundin": {
+    "emoji": "👩‍❤️‍👨",
+    "english": "friend / girlfriend"
+  },
+  "das Frühstück": {
+    "emoji": "🍳",
+    "english": "breakfast"
+  },
+  "die Führung": {
+    "emoji": "👨‍🏫",
+    "english": "tour"
+  },
+  "der Fuß": {
+    "emoji": "🦶",
+    "english": "foot"
+  },
+  "der Fußball": {
+    "emoji": "⚽",
+    "english": "football"
+  },
+  "der Garten": {
+    "emoji": "🌻",
+    "english": "garden"
+  },
+  "der Gast": {
+    "emoji": "🧑‍🤝‍🧑",
+    "english": "guest"
+  },
+  "das Geburtsjahr": {
+    "emoji": "🎂",
+    "english": "birth year"
+  },
+  "der Geburtsort": {
+    "emoji": "🏠",
+    "english": "birthplace"
+  },
+  "der Geburtstag": {
+    "emoji": "🎉",
+    "english": "birthday"
+  },
+  "das Geld": {
+    "emoji": "💵",
+    "english": "money"
+  },
+  "das Gemüse": {
+    "emoji": "🥦",
+    "english": "vegetables"
+  },
+  "das Gepäck": {
+    "emoji": "🧳",
+    "english": "luggage"
+  },
+  "das Geschäft": {
+    "emoji": "🛍️",
+    "english": "shop"
+  },
+  "das Geschenk": {
+    "emoji": "🎁",
+    "english": "present"
+  },
+  "die Geschwister (pl.)": {
+    "emoji": "👶👧",
+    "english": "siblings"
+  },
+  "das Gespräch": {
+    "emoji": "💬",
+    "english": "conversation/talk/call"
+  },
+  "das Getränk": {
+    "emoji": "🥤",
+    "english": "drink"
+  },
+  "das Gewicht": {
+    "emoji": "⚖️",
+    "english": "weight"
+  },
+  "das Glas": {
+    "emoji": "🍷",
+    "english": "glass"
+  },
+  "das Gleis": {
+    "emoji": "🚉",
+    "english": "platform"
+  },
+  "das Glück": {
+    "emoji": "🍀",
+    "english": "luck"
+  },
+  "der Glückwunsch": {
+    "emoji": "🎊",
+    "english": "congratulations"
+  },
+  "die Größe": {
+    "emoji": "📐",
+    "english": "size"
+  },
+  "die Großeltern (pl.)": {
+    "emoji": "👵👴",
+    "english": "grandparents"
+  },
+  "die Großmutter": {
+    "emoji": "👵",
+    "english": "grandmother"
+  },
+  "der Großvater": {
+    "emoji": "👴",
+    "english": "grandfather"
+  },
+  "die Gruppe": {
+    "emoji": "👥",
+    "english": "group"
+  },
+  "der Gruß": {
+    "emoji": "👋",
+    "english": "regards"
+  },
+  "das Haar": {
+    "emoji": "💇‍♀️",
+    "english": "hair"
+  },
+  "das Hähnchen": {
+    "emoji": "🍗",
+    "english": "chicken"
+  },
+  "die Halbpension": {
+    "emoji": "🍽️🏨",
+    "english": "half-board (dining)"
+  },
+  "die Halle": {
+    "emoji": "🏛️",
+    "english": "hall"
+  },
+  "die Haltestelle": {
+    "emoji": "🚌",
+    "english": "(public transport) stop"
+  },
+  "die Hand": {
+    "emoji": "✋",
+    "english": "hand"
+  },
+  "das Handy": {
+    "emoji": "📱",
+    "english": "mobile telephone"
+  },
+  "das Haus": {
+    "emoji": "🏠",
+    "english": "house / building"
+  },
+  "die Hausaufgabe": {
+    "emoji": "📝📚",
+    "english": "homework"
+  },
+  "die Hausfrau": {
+    "emoji": "👩‍🍳",
+    "english": "housewife"
+  },
+  "der Hausmann": {
+    "emoji": "👨‍🍳",
+    "english": "househusband"
+  },
+  "die Heimat": {
+    "emoji": "🏡",
+    "english": "home"
+  },
+  "der Herd": {
+    "emoji": "🍳",
+    "english": "stove"
+  },
+  "der Herr": {
+    "emoji": "👔",
+    "english": "Mister"
+  },
+  "die Hilfe": {
+    "emoji": "🤝",
+    "english": "help"
+  },
+  "das Hobby": {
+    "emoji": "🎨",
+    "english": "hobby"
+  },
+  "die Hochzeit": {
+    "emoji": "💍",
+    "english": "marriage"
+  },
+  "das Hotel": {
+    "emoji": "🏨",
+    "english": "hotel"
+  },
+  "der Hund": {
+    "emoji": "🐶",
+    "english": "dog"
+  },
+  "der Hunger": {
+    "emoji": "🍽️",
+    "english": "hunger"
+  },
+  "die Information": {
+    "emoji": "ℹ️",
+    "english": "information point"
+  },
+  "das Internet": {
+    "emoji": "🌐",
+    "english": "internet"
+  },
+  "die Jacke": {
+    "emoji": "🧥",
+    "english": "jacket"
+  },
+  "der Job": {
+    "emoji": "💼",
+    "english": "job"
+  },
+  "der Jugendliche": {
+    "emoji": "🧑",
+    "english": "youth/young person"
+  },
+  "der Junge": {
+    "emoji": "👦",
+    "english": "boy"
+  },
+  "der Kaffee": {
+    "emoji": "☕",
+    "english": "coffee"
+  },
+  "die Karte": {
+    "emoji": "💳",
+    "english": "card"
+  },
+  "die Kartoffel": {
+    "emoji": "🥔",
+    "english": "potato"
+  },
+  "die Kasse": {
+    "emoji": "💰",
+    "english": "till"
+  },
+  "das Kind": {
+    "emoji": "👶",
+    "english": "child"
+  },
+  "der Kindergarten": {
+    "emoji": "🏫",
+    "english": "kindergarten"
+  },
+  "das Kino": {
+    "emoji": "🎬",
+    "english": "cinema"
+  },
+  "der Kiosk": {
+    "emoji": "🛒",
+    "english": "kiosk"
+  },
+  "die Klasse": {
+    "emoji": "👩‍🏫",
+    "english": "class"
+  },
+  "die Kleidung": {
+    "emoji": "👗",
+    "english": "clothes"
+  },
+  "der Koffer": {
+    "emoji": "🧳",
+    "english": "suitcase"
+  },
+  "der Kollege": {
+    "emoji": "👨‍💼",
+    "english": "colleague"
+  },
+  "das Konto": {
+    "emoji": "🏦",
+    "english": "account"
+  },
+  "der Kopf": {
+    "emoji": "🧠",
+    "english": "head"
+  },
+  "die Küche": {
+    "emoji": "👩‍🍳",
+    "english": "kitchen"
+  },
+  "der Kuchen": {
+    "emoji": "🍰",
+    "english": "cake"
+  },
+  "der Kugelschreiber": {
+    "emoji": "🖊️",
+    "english": "ball-point pen"
+  },
+  "der Kühlschrank": {
+    "emoji": "🧊",
+    "english": "fridge"
+  },
+  "der Kunde": {
+    "emoji": "🧑‍🤝‍🧑",
+    "english": "customer"
+  },
+  "der Kurs": {
+    "emoji": "📚",
+    "english": "course"
+  },
+  "der Laden": {
+    "emoji": "🛍️",
+    "english": "shop"
+  },
+  "das Land": {
+    "emoji": "🌍",
+    "english": "country"
+  },
+  "das Leben": {
+    "emoji": "🌱",
+    "english": "life"
+  },
+  "die Lebensmittel (pl.)": {
+    "emoji": "🥗",
+    "english": "food"
+  },
+  "der Lehrer": {
+    "emoji": "👩‍🏫",
+    "english": "teacher"
+  },
+  "die Leute (pl.)": {
+    "emoji": "👥",
+    "english": "people"
+  },
+  "das Licht": {
+    "emoji": "💡",
+    "english": "light"
+  },
+  "das Lied": {
+    "emoji": "🎶",
+    "english": "song"
+  },
+  "der Lkw": {
+    "emoji": "🚚",
+    "english": "HGV"
+  },
+  "das Lokal": {
+    "emoji": "🍻",
+    "english": "pub"
+  },
+  "die Lösung": {
+    "emoji": "🧩",
+    "english": "solution"
+  },
+  "das Mädchen": {
+    "emoji": "👧",
+    "english": "girl"
+  },
+  "der Mann": {
+    "emoji": "👨",
+    "english": "man / husband"
+  },
+  "die Maschine": {
+    "emoji": "🛠️",
+    "english": "machine"
+  },
+  "das Meer": {
+    "emoji": "🌊",
+    "english": "sea"
+  },
+  "der Mensch": {
+    "emoji": "👥",
+    "english": "people"
+  },
+  "die Miete": {
+    "emoji": "💰🏠",
+    "english": "rent"
+  },
+  "die Milch": {
+    "emoji": "🥛",
+    "english": "milk"
+  },
+  "die Mitte": {
+    "emoji": "⚪",
+    "english": "middle"
+  },
+  "die Möbel (pl.)": {
+    "emoji": "🛋️",
+    "english": "furniture"
+  },
+  "der Moment": {
+    "emoji": "⏳",
+    "english": "moment"
+  },
+  "der Mund": {
+    "emoji": "👄",
+    "english": "mouth"
+  },
+  "die Mutter": {
+    "emoji": "👩‍👧",
+    "english": "mother"
+  },
+  "der Name": {
+    "emoji": "🏷️",
+    "english": "name"
+  },
+  "die Nummer": {
+    "emoji": "🔢",
+    "english": "number"
+  },
+  "das Obst": {
+    "emoji": "🍏",
+    "english": "fruit"
+  },
+  "das Öl": {
+    "emoji": "🛢️",
+    "english": "oil"
+  },
+  "die Oma": {
+    "emoji": "👵",
+    "english": "grandmother"
+  },
+  "der Opa": {
+    "emoji": "👴",
+    "english": "grandfather"
+  },
+  "der Ort": {
+    "emoji": "📍",
+    "english": "location / place"
+  },
+  "das Papier": {
+    "emoji": "📄",
+    "english": "paper"
+  },
+  "die Papiere (pl.)": {
+    "emoji": "📑",
+    "english": "papers"
+  },
+  "der Partner": {
+    "emoji": "👨‍❤️‍👨",
+    "english": "(male) partner"
+  },
+  "die Partnerin": {
+    "emoji": "👩‍❤️‍👩",
+    "english": "(female) partner"
+  },
+  "die Party": {
+    "emoji": "🎉",
+    "english": "party"
+  },
+  "der Pass": {
+    "emoji": "📜",
+    "english": "passport"
+  },
+  "die Pause": {
+    "emoji": "⏸️",
+    "english": "break"
+  },
+  "der Plan": {
+    "emoji": "🗺️",
+    "english": "map / plan"
+  },
+  "der Platz": {
+    "emoji": "Seat",
+    "english": "seat"
+  },
+  "die Polizei": {
+    "emoji": "👮",
+    "english": "police"
+  },
+  "die Pommes frites (pl.)": {
+    "emoji": "🍟",
+    "english": "chips"
+  },
+  "die Post": {
+    "emoji": "📮",
+    "english": "post office"
+  },
+  "die Postleitzahl": {
+    "emoji": "🔢📬",
+    "english": "postcode"
+  },
+  "das Praktikum": {
+    "emoji": "🧑‍🎓",
+    "english": "internship"
+  },
+  "die Praxis": {
+    "emoji": "🔍",
+    "english": "practice"
+  },
+  "der Preis": {
+    "emoji": "🏷️",
+    "english": "price"
+  },
+  "das Problem": {
+    "emoji": "❓",
+    "english": "problem"
+  },
+  "der Prospekt": {
+    "emoji": "📜",
+    "english": "brochure"
+  },
+  "die Prüfung": {
+    "emoji": "📝",
+    "english": "examination"
+  },
+  "der Raum": {
+    "emoji": "🏠",
+    "english": "room"
+  },
+  "die Rechnung": {
+    "emoji": "💵",
+    "english": "bill"
+  },
+  "der Regen": {
+    "emoji": "🌧️",
+    "english": "rain"
+  },
+  "der Reis": {
+    "emoji": "🍚",
+    "english": "rice"
+  },
+  "die Reise": {
+    "emoji": "✈️🌍",
+    "english": "journey / trip"
+  },
+  "das Reisebüro": {
+    "emoji": "🏢✈️",
+    "english": "travel agency"
+  },
+  "der Reiseführer": {
+    "emoji": "🗺️👨‍🏫",
+    "english": "travel guide"
+  },
+  "die Reparatur": {
+    "emoji": "🔧",
+    "english": "repair"
+  },
+  "das Restaurant": {
+    "emoji": "🍽️",
+    "english": "restaurant"
+  },
+  "die Rezeption": {
+    "emoji": "🏨🔑",
+    "english": "reception"
+  },
+  "der Saft": {
+    "emoji": "🍹",
+    "english": "juice"
+  },
+  "der Salat": {
+    "emoji": "🥗",
+    "english": "salad"
+  },
+  "das Salz": {
+    "emoji": "🧂",
+    "english": "salt"
+  },
+  "die S-Bahn": {
+    "emoji": "🚆",
+    "english": "commuter train"
+  },
+  "der Schalter": {
+    "emoji": "🏧",
+    "english": "counter"
+  },
+  "das Schild": {
+    "emoji": "📛",
+    "english": "sign"
+  },
+  "der Schinken": {
+    "emoji": "🍖",
+    "english": "ham"
+  },
+  "der Schlüssel": {
+    "emoji": "🔑",
+    "english": "key"
+  },
+  "der Schrank": {
+    "emoji": "🚪",
+    "english": "cupboard"
+  },
+  "der Schuh": {
+    "emoji": "👟",
+    "english": "shoe"
+  },
+  "die Schule": {
+    "emoji": "🏫",
+    "english": "school"
+  },
+  "der Schüler": {
+    "emoji": "👦📚",
+    "english": "pupil"
+  },
+  "die Schwester": {
+    "emoji": "👩‍❤️‍👩",
+    "english": "sister"
+  },
+  "das Schwimmbad": {
+    "emoji": "🏊‍♂️🛁",
+    "english": "swimming pool"
+  },
+  "der See": {
+    "emoji": "🌊",
+    "english": "lake"
+  },
+  "die Sehenswürdigkeit": {
+    "emoji": "🗽",
+    "english": "sights/attractions"
+  },
+  "das Sofa": {
+    "emoji": "🛋️",
+    "english": "sofa"
+  },
+  "der Sohn": {
+    "emoji": "👦",
+    "english": "son"
+  },
+  "die Sonne": {
+    "emoji": "☀️",
+    "english": "sun"
+  },
+  "die Speisekarte": {
+    "emoji": "📜🍽️",
+    "english": "menu"
+  },
+  "der Sport": {
+    "emoji": "⚽",
+    "english": "sport"
+  },
+  "die Sprache": {
+    "emoji": "🌍🗣️",
+    "english": "language"
+  },
+  "die Stadt": {
+    "emoji": "🏙️",
+    "english": "town / city"
+  },
+  "der Stock": {
+    "emoji": "🏢",
+    "english": "floor (of a building)"
+  },
+  "die Straße": {
+    "emoji": "🛣️",
+    "english": "street"
+  },
+  "die Straßenbahn": {
+    "emoji": "🚋",
+    "english": "tram"
+  },
+  "das Studium": {
+    "emoji": "🎓",
+    "english": "degree course"
+  },
+  "der Student": {
+    "emoji": "👨‍🎓",
+    "english": "student"
+  },
+  "die Stunde": {
+    "emoji": "⌛",
+    "english": "hour"
+  },
+  "die Tasche": {
+    "emoji": "👜",
+    "english": "bag"
+  },
+  "das Taxi": {
+    "emoji": "🚖",
+    "english": "taxi"
+  },
+  "der Tee": {
+    "emoji": "🍵",
+    "english": "tea"
+  },
+  "der Teil": {
+    "emoji": "🧩",
+    "english": "part"
+  },
+  "das Telefon": {
+    "emoji": "📞",
+    "english": "telephone"
+  },
+  "der Termin": {
+    "emoji": "📅",
+    "english": "appointment"
+  },
+  "der Test": {
+    "emoji": "📝",
+    "english": "test"
+  },
+  "der Text": {
+    "emoji": "📄",
+    "english": "text"
+  },
+  "das Ticket": {
+    "emoji": "🎟️",
+    "english": "ticket"
+  },
+  "der Tisch": {
+    "emoji": "🪑",
+    "english": "table"
+  },
+  "die Tochter": {
+    "emoji": "👧",
+    "english": "daughter"
+  },
+  "die Toilette": {
+    "emoji": "🚽",
+    "english": "toilet"
+  },
+  "die Tomate": {
+    "emoji": "🍅",
+    "english": "tomato"
+  },
+  "die Treppe": {
+    "emoji": "🛗",
+    "english": "stairs"
+  },
+  "die Uhr": {
+    "emoji": "🕒",
+    "english": "o'clock / am / pm"
+  },
+  "der Unterricht": {
+    "emoji": "🎓",
+    "english": "class"
+  },
+  "die Unterschrift": {
+    "emoji": "✍️",
+    "english": "signature"
+  },
+  "der Urlaub": {
+    "emoji": "🏖️",
+    "english": "holiday"
+  },
+  "der Vater": {
+    "emoji": "👨‍👧",
+    "english": "father"
+  },
+  "der Verein": {
+    "emoji": "🤝",
+    "english": "club"
+  },
+  "der Verkäufer": {
+    "emoji": "🛍️",
+    "english": "salesperson"
+  },
+  "der Vermieter": {
+    "emoji": "🏠🔑",
+    "english": "landlord"
+  },
+  "der Verwandte": {
+    "emoji": "👪",
+    "english": "relative"
+  },
+  "der Vorname": {
+    "emoji": "🔤",
+    "english": "first name"
+  },
+  "die Vorsicht": {
+    "emoji": "⚠️",
+    "english": "…"
+  },
+  "die Vorwahl": {
+    "emoji": "📞",
+    "english": "area code"
+  },
+  "das Wasser": {
+    "emoji": "💧",
+    "english": "water"
+  },
+  "der Wein": {
+    "emoji": "🍷",
+    "english": "wine"
+  },
+  "die Welt": {
+    "emoji": "🌍",
+    "english": "world"
+  },
+  "das Wetter": {
+    "emoji": "☀️🌧️",
+    "english": "weather"
+  },
+  "das Wiederhören": {
+    "emoji": "📞👋",
+    "english": "…"
+  },
+  "das Wiedersehen": {
+    "emoji": "👋👀",
+    "english": "…"
+  },
+  "der Wind": {
+    "emoji": "🍃",
+    "english": "wind"
+  },
+  "die Wohnung": {
+    "emoji": "🏢",
+    "english": "flat"
+  },
+  "das Wort": {
+    "emoji": "📝",
+    "english": "word"
+  },
+  "die Zeit": {
+    "emoji": "⏰",
+    "english": "time"
+  },
+  "die Zeitung": {
+    "emoji": "📰",
+    "english": "newspaper"
+  },
+  "die Zigarette": {
+    "emoji": "🚬",
+    "english": "cigarette"
+  },
+  "das Zimmer": {
+    "emoji": "🛏️",
+    "english": "room"
+  },
+  "der Zoll": {
+    "emoji": "🛃",
+    "english": "customs"
+  },
+  "der Zug": {
+    "emoji": "🚆",
+    "english": "train"
+  }
+}
