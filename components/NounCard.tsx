@@ -259,12 +259,19 @@ export default function NounCard() {
         </div>
       ) : mode === 'gender' ? (
         // GENDER MODE
-        <div className="flex flex-col items-center">
+        <div className="flex flex-col items-center w-full">
           <div className="text-sm font-semibold text-gray-500 dark:text-gray-400 uppercase tracking-wider mb-6">
             Select the Correct Article
           </div>
           
           <div className="text-8xl mb-4">{currentNoun.emoji}</div>
+          
+          {showEnglishHint && (
+            <div className="mb-4 px-4 py-2 bg-blue-50 dark:bg-blue-900/30 text-blue-800 dark:text-blue-300 rounded-lg text-lg font-medium">
+              "{currentNoun.english}"
+            </div>
+          )}
+
           <div className="text-3xl font-bold text-gray-800 dark:text-gray-100 mb-8">
             ___ {currentNoun.word}
           </div>
@@ -293,7 +300,16 @@ export default function NounCard() {
             })}
           </div>
           
-          <div className="w-full flex justify-end mt-8">
+          <div className="w-full flex justify-between mt-8">
+            <button
+              onClick={() => setShowEnglishHint(true)}
+              disabled={showEnglishHint}
+              className="text-sm px-4 py-2 text-gray-600 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-700 rounded-lg transition-colors flex items-center gap-2 disabled:opacity-50"
+            >
+              <HelpCircle className="w-4 h-4" />
+              What am I looking at?
+            </button>
+            
             {isCorrect && (
               <button
                 onClick={loadNext}
@@ -306,14 +322,20 @@ export default function NounCard() {
         </div>
       ) : (
         // MCQ MODE
-        <div className="flex flex-col items-center">
+        <div className="flex flex-col items-center w-full">
           <div className="text-sm font-semibold text-gray-500 dark:text-gray-400 uppercase tracking-wider mb-6">
             Introduction: Select the matching image
           </div>
           
-          <div className="text-4xl font-bold text-gray-800 dark:text-gray-100 mb-8">
+          <div className="text-4xl font-bold text-gray-800 dark:text-gray-100 mb-4">
             {currentNoun.german}
           </div>
+          
+          {showEnglishHint && (
+            <div className="mb-6 px-4 py-2 bg-blue-50 dark:bg-blue-900/30 text-blue-800 dark:text-blue-300 rounded-lg text-lg font-medium">
+              "{currentNoun.english}"
+            </div>
+          )}
           
           <div className="grid grid-cols-2 gap-4 w-full">
             {mcqOptions.map(opt => {
@@ -339,7 +361,16 @@ export default function NounCard() {
             })}
           </div>
           
-          <div className="w-full flex justify-end mt-8">
+          <div className="w-full flex justify-between mt-8">
+            <button
+              onClick={() => setShowEnglishHint(true)}
+              disabled={showEnglishHint}
+              className="text-sm px-4 py-2 text-gray-600 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-700 rounded-lg transition-colors flex items-center gap-2 disabled:opacity-50"
+            >
+              <HelpCircle className="w-4 h-4" />
+              What am I looking at?
+            </button>
+            
             {isCorrect && (
               <button
                 onClick={loadNext}
