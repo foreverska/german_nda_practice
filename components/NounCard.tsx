@@ -43,17 +43,50 @@ export default function NounCard() {
   const [sessionTime, setSessionTime] = useState(0);
   const [isTimerRunning, setIsTimerRunning] = useState(true);
 
-  // Global keydown for Enter to speedrun
+  // Global keydown for Enter to speedrun and hotkeys for MCQ/Gender
   useEffect(() => {
     const handleGlobalKeydown = (e: KeyboardEvent) => {
+      const isInput = document.activeElement?.tagName === 'INPUT';
+      
       if (e.key === 'Enter' && (isCorrect || showAnswer)) {
         e.preventDefault();
         loadNext();
+        return;
+      }
+      
+      if (isInput) return;
+
+      if (mode === 'mcq' && !isCorrect && !showAnswer) {
+        const keyMap: Record<string, number> = {
+          '1': 0, 'q': 0,
+          '2': 1, 'w': 1,
+          '3': 2, 'e': 2,
+          '4': 3, 'r': 3
+        };
+        const index = keyMap[e.key.toLowerCase()];
+        if (index !== undefined && mcqOptions[index]) {
+          e.preventDefault();
+          handleMCQSelect(mcqOptions[index].id);
+        }
+      }
+
+      if (mode === 'gender' && !isCorrect && !showAnswer) {
+        const genderMap: Record<string, string> = {
+          '1': 'der', 'q': 'der',
+          '2': 'die', 'w': 'die',
+          '3': 'das', 'e': 'das'
+        };
+        const article = genderMap[e.key.toLowerCase()];
+        if (article) {
+          e.preventDefault();
+          handleGenderSelect(article);
+        }
       }
     };
+    
     window.addEventListener('keydown', handleGlobalKeydown);
     return () => window.removeEventListener('keydown', handleGlobalKeydown);
-  }, [isCorrect, showAnswer]); // rebind when states change
+  }); // Rebind on every render to ensure fresh state closures
 
   useEffect(() => {
     let interval: NodeJS.Timeout;
@@ -422,7 +455,7 @@ export default function NounCard() {
             </div>
             
             <div className="flex gap-4 w-full justify-center">
-              {['der', 'die', 'das'].map(article => {
+              {['der', 'die', 'das'].map((article, idx) => {
                 const isActualCorrect = article === currentNoun.article.toLowerCase();
                 const isThisWrong = wrongGenders.has(article);
                 const isSelected = isCorrect && isActualCorrect;
@@ -433,12 +466,13 @@ export default function NounCard() {
                     onClick={() => handleGenderSelect(article)}
                     disabled={isCorrect || isThisWrong}
                     className={cn(
-                      "px-8 py-4 text-2xl font-bold rounded-2xl border-4 transition-all bg-gray-50 dark:bg-gray-900/50",
+                      "px-8 py-4 text-2xl font-bold rounded-2xl border-4 transition-all bg-gray-50 dark:bg-gray-900/50 relative",
                       isSelected ? "border-green-500 bg-green-50 dark:bg-green-900/20 text-green-700 dark:text-green-400"
                       : isThisWrong ? "border-red-400 bg-red-50 dark:bg-red-900/20 text-red-700 dark:text-red-400 opacity-50"
                       : "border-gray-200 dark:border-gray-700 hover:border-blue-400 hover:bg-white dark:hover:bg-gray-800 text-gray-800 dark:text-gray-200"
                     )}
                   >
+                    <div className="absolute top-2 left-3 text-[10px] font-bold text-gray-400 opacity-60">{idx + 1}</div>
                     {article}
                   </button>
                 );
@@ -483,7 +517,7 @@ export default function NounCard() {
             )}
             
             <div className="grid grid-cols-2 gap-4 w-full">
-              {mcqOptions.map(opt => {
+              {mcqOptions.map((opt, idx) => {
                 const isActualCorrect = opt.id === currentNoun.id;
                 const isThisWrong = wrongMCQs.has(opt.id);
                 const showAsCorrect = isCorrect && isActualCorrect;
@@ -494,12 +528,13 @@ export default function NounCard() {
                     onClick={() => handleMCQSelect(opt.id)}
                     disabled={isCorrect || isThisWrong}
                     className={cn(
-                      "h-32 text-6xl rounded-2xl border-4 flex items-center justify-center transition-all bg-gray-50 dark:bg-gray-900/50",
+                      "h-32 text-6xl rounded-2xl border-4 flex items-center justify-center transition-all bg-gray-50 dark:bg-gray-900/50 relative",
                       showAsCorrect ? "border-green-500 bg-green-50 dark:bg-green-900/20"
                       : isThisWrong ? "border-red-400 bg-red-50 dark:bg-red-900/20 opacity-50"
                       : "border-gray-200 dark:border-gray-700 hover:border-blue-400 hover:bg-white dark:hover:bg-gray-800"
                     )}
                   >
+                    <div className="absolute top-2 left-3 text-[10px] font-bold text-gray-400 opacity-60">{idx + 1}</div>
                     {opt.emoji}
                   </button>
                 );

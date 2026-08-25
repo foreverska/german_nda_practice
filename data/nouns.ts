@@ -126,7 +126,7 @@ export const nouns: Noun[] = [
     "article": "der",
     "word": "Großvater",
     "english": "grandfather",
-    "emoji": "👴"
+    "emoji": "👴🦯"
   },
   {
     "id": "n154",
@@ -166,7 +166,7 @@ export const nouns: Noun[] = [
     "article": "der",
     "word": "Verwandte",
     "english": "relative",
-    "emoji": "👨‍👩‍👧‍👦"
+    "emoji": "👨‍👩‍👧‍👦🏠"
   },
   {
     "id": "n32",
@@ -238,7 +238,7 @@ export const nouns: Noun[] = [
     "article": "die",
     "word": "Geschwister (pl.)",
     "english": "siblings",
-    "emoji": "👫"
+    "emoji": "👦👧"
   },
   {
     "id": "n141",
@@ -254,7 +254,7 @@ export const nouns: Noun[] = [
     "article": "die",
     "word": "Großmutter",
     "english": "grandmother",
-    "emoji": "👵"
+    "emoji": "👵🫖"
   },
   {
     "id": "n159",
@@ -302,7 +302,7 @@ export const nouns: Noun[] = [
     "article": "die",
     "word": "Tochter",
     "english": "daughter",
-    "emoji": "👧"
+    "emoji": "👨‍👧"
   },
   {
     "id": "n246",
@@ -670,7 +670,7 @@ export const nouns: Noun[] = [
     "article": "die",
     "word": "Möbel (pl.)",
     "english": "furniture",
-    "emoji": "🛋️"
+    "emoji": "🪑🛋️"
   },
   {
     "id": "n182",
@@ -734,7 +734,7 @@ export const nouns: Noun[] = [
     "article": "das",
     "word": "Apartment",
     "english": "apartment",
-    "emoji": "🏢🏠"
+    "emoji": "🏢"
   },
   {
     "id": "n14",
@@ -1030,7 +1030,7 @@ export const nouns: Noun[] = [
     "article": "der",
     "word": "Erwachsene",
     "english": "adult",
-    "emoji": "👨"
+    "emoji": "🧑‍💼"
   },
   {
     "id": "n89",
@@ -1214,7 +1214,7 @@ export const nouns: Noun[] = [
     "article": "der",
     "word": "Text",
     "english": "text",
-    "emoji": "📄"
+    "emoji": "📝"
   },
   {
     "id": "n252",
@@ -1238,7 +1238,7 @@ export const nouns: Noun[] = [
     "article": "der",
     "word": "Zug",
     "english": "train",
-    "emoji": "🚆"
+    "emoji": "🚂"
   },
   {
     "id": "n3",
@@ -1334,7 +1334,7 @@ export const nouns: Noun[] = [
     "article": "die",
     "word": "Frauen",
     "english": "women",
-    "emoji": "👭"
+    "emoji": "👩👩"
   },
   {
     "id": "n115",
@@ -1710,7 +1710,7 @@ export const nouns: Noun[] = [
     "article": "der",
     "word": "Eintritt",
     "english": "entry",
-    "emoji": "🎟️"
+    "emoji": "🎟️🚪"
   },
   {
     "id": "n83",
@@ -1814,7 +1814,7 @@ export const nouns: Noun[] = [
     "article": "der",
     "word": "Prospekt",
     "english": "brochure",
-    "emoji": "📖"
+    "emoji": "📰"
   },
   {
     "id": "n194",
@@ -2134,7 +2134,7 @@ export const nouns: Noun[] = [
     "article": "das",
     "word": "Konto",
     "english": "account",
-    "emoji": "💳🧾"
+    "emoji": "💳🏦"
   },
   {
     "id": "n231",
