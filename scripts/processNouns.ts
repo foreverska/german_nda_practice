@@ -62,11 +62,13 @@ async function main() {
 You are creating visual flashcards for a German language learning app. 
 For the following German nouns, provide the best visual representation using emojis. The goal is to allow a learner to guess the German noun purely by looking at the emoji(s), without relying on English translations.
 
-Guidelines:
-1. Use a highly recognizable single emoji if possible (e.g., 🍎 for "der Apfel", 💪 for "der Arm", 🦵 for "das Bein", 🛣️ for "die Autobahn").
-2. Be creative. If a single emoji isn't quite clear enough, you may use a **pair** of emojis to get the point across (e.g., ✈️🧳 for "der Ausflug" / excursion, 🧑‍💼🏢 for "der Beruf" / profession).
-3. If the concept is completely abstract and fundamentally impossible to represent visually (e.g., "das Beispiel" / example), return the string "NONE".
-4. Also provide the English translation for verification.
+CRITICAL INSTRUCTIONS FOR CREATIVITY & PRECISION:
+1. Avoid generic associations that map better to other common words. For example, do not use 🏦 for "das Konto" (account) because a learner will guess "die Bank". Instead, use something like 💳🧾 or 💰🏦.
+2. Do not use generic buildings or generic people if a more specific emoji or pair of emojis exists. For example, do not use 🏢 for "der Flughafen" (airport) - use ✈️🛫 or ✈️🏢 instead.
+3. Use a highly recognizable single emoji if it's perfectly unambiguous (e.g., 🍎 for "der Apfel", 💪 for "der Arm", 🦵 for "das Bein").
+4. If a single emoji isn't quite clear enough, you MUST use a **pair or trio** of emojis to get the point across (e.g., ✈️🧳 for "der Ausflug" / excursion, 🧑‍💼🏢 for "der Beruf" / profession).
+5. If the concept is completely abstract and fundamentally impossible to represent visually (e.g., "das Beispiel" / example), return the string "NONE".
+6. Also provide the English translation for verification.
 
 Format your response as a JSON array of objects with "german", "emoji", and "english" keys.
 
@@ -76,14 +78,13 @@ ${JSON.stringify(batch, null, 2)}
 
     try {
       const completion = await openai.chat.completions.create({
-        model: "openai/gpt-4o-mini",
+        model: "openai/gpt-4o",
         messages: [{ role: "user", content: prompt }],
         response_format: { type: "json_object" }
       });
 
       const responseContent = completion.choices[0].message.content || '{"data":[]}';
       
-      // Sometimes it returns the array directly or wrapped in an object
       let parsed;
       try {
         parsed = JSON.parse(responseContent);
@@ -92,7 +93,6 @@ ${JSON.stringify(batch, null, 2)}
         continue;
       }
       
-      // Handle different JSON structures from the LLM
       let results = [];
       if (Array.isArray(parsed)) {
         results = parsed;
@@ -120,6 +120,43 @@ ${JSON.stringify(batch, null, 2)}
   
   console.log(`Successfully mapped ${Object.keys(emojis).length} nouns.`);
   console.log(`Failed to map ${noEmojis.length} nouns.`);
+
+  // Generate data/nouns.ts
+  const tsNouns = [];
+  let id = 1;
+  for (const [german, data] of Object.entries(emojis)) {
+    const articleMatch = german.match(/^(der|die|das)\s+(.*)$/i);
+    let article = '';
+    let word = german;
+    if (articleMatch) {
+      article = articleMatch[1].toLowerCase();
+      word = articleMatch[2];
+    }
+    
+    tsNouns.push({
+      id: `n${id++}`,
+      german,
+      article,
+      word,
+      english: data.english,
+      emoji: data.emoji
+    });
+  }
+
+  const fileContent = `export interface Noun {
+  id: string;
+  german: string;
+  article: string;
+  word: string;
+  english: string;
+  emoji: string;
+}
+
+export const nouns: Noun[] = ${JSON.stringify(tsNouns, null, 2)};
+`;
+
+  fs.writeFileSync('data/nouns.ts', fileContent);
+  console.log(`Generated data/nouns.ts with ${tsNouns.length} nouns.`);
 }
 
 main().catch(console.error);
