@@ -221,9 +221,9 @@ export default function NounCard() {
   };
 
   // Calculate progress
-  const levelNouns = nouns.slice((activeLevel - 1) * LEVEL_SIZE, activeLevel * LEVEL_SIZE);
-  const masteredInLevel = levelNouns.filter(n => nounStats[n.id]?.typeScore >= REQUIRED_SCORE).length;
-  const levelProgress = (masteredInLevel / LEVEL_SIZE) * 100;
+  const totalLevels = Math.ceil(nouns.length / LEVEL_SIZE);
+  const totalMastered = nouns.filter(n => nounStats[n.id]?.typeScore >= REQUIRED_SCORE).length;
+  const totalProgress = (totalMastered / nouns.length) * 100;
 
   return (
     <div className="w-full max-w-2xl bg-white dark:bg-gray-800 rounded-2xl shadow-sm border border-gray-100 dark:border-gray-700 transition-colors">
@@ -231,11 +231,11 @@ export default function NounCard() {
       {/* Gamification Header */}
       <div className="bg-gray-50 dark:bg-gray-900/50 p-6 rounded-t-2xl border-b border-gray-100 dark:border-gray-700 flex flex-col gap-4">
         
-        <div className="flex justify-between items-start">
-          <div className="flex flex-col gap-3">
+        <div className="flex justify-between items-start gap-4">
+          <div className="flex flex-col gap-3 flex-1">
             <div className="flex flex-col">
               <span className="text-xs font-bold text-gray-400 dark:text-gray-500 uppercase tracking-wider mb-1 flex items-center gap-2">
-                Level {activeLevel} Progress
+                Course Progress (Level {activeLevel} / {totalLevels})
                 <button
                   onClick={() => {
                     if (confirm("Reset all noun mastery?")) {
@@ -249,12 +249,24 @@ export default function NounCard() {
                   <RefreshCw className="w-3 h-3" />
                 </button>
               </span>
-              <div className="flex items-center gap-3 mt-1">
-                <Target className="w-5 h-5 text-blue-500" />
-                <div className="w-32 h-2.5 bg-gray-200 dark:bg-gray-700 rounded-full overflow-hidden shadow-inner">
-                  <div className="h-full bg-blue-500 transition-all duration-500" style={{ width: `${levelProgress}%` }}></div>
+              <div className="flex items-center gap-3 mt-1 w-full pr-4">
+                <Target className="w-5 h-5 text-blue-500 shrink-0" />
+                <div className="flex-1 h-3 bg-gray-200 dark:bg-gray-700 rounded-full overflow-hidden shadow-inner relative">
+                  <div className="absolute left-0 top-0 bottom-0 bg-blue-500 transition-all duration-500" style={{ width: `${totalProgress}%` }}></div>
+                  {/* Ticks for each level boundary */}
+                  {Array.from({ length: totalLevels - 1 }).map((_, i) => {
+                    const tickPercentage = (((i + 1) * LEVEL_SIZE) / nouns.length) * 100;
+                    return (
+                      <div 
+                        key={i} 
+                        className="absolute top-0 bottom-0 w-px bg-white/40 dark:bg-black/30 z-10" 
+                        style={{ left: `${tickPercentage}%` }}
+                        title={`Level ${i + 2}`}
+                      />
+                    );
+                  })}
                 </div>
-                <span className="text-sm font-semibold text-gray-700 dark:text-gray-300">{masteredInLevel}/{LEVEL_SIZE}</span>
+                <span className="text-sm font-semibold text-gray-700 dark:text-gray-300 shrink-0">{totalMastered}/{nouns.length}</span>
               </div>
             </div>
           </div>
