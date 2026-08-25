@@ -80,23 +80,6 @@ export default function Home() {
             <option value="B1+">Expert</option>
           </select>
 
-          <div className="text-sm text-gray-500 dark:text-gray-400 bg-white dark:bg-gray-800 px-3 py-1 rounded-full shadow-sm border border-gray-100 dark:border-gray-700 flex items-center gap-3">
-            <span>Completed: <span className="font-bold text-blue-600 dark:text-blue-400">{completedSentences}</span></span>
-            <span className="w-px h-4 bg-gray-200 dark:bg-gray-700"></span>
-            <span>Missed: <span className="font-bold text-red-500 dark:text-red-400">{Object.keys(missedWords).length}</span></span>
-          </div>
-          
-          <button 
-            onClick={() => {
-              if (confirm("Are you sure you want to reset your progress?")) {
-                resetProgress();
-              }
-            }}
-            className="text-xs text-gray-500 dark:text-gray-400 hover:text-red-600 dark:hover:text-red-400 hover:bg-red-50 dark:hover:bg-red-900/30 px-2 py-1 rounded transition-colors"
-          >
-            Reset
-          </button>
-          
           <ThemeToggle />
         </div>
       </div>

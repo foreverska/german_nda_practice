@@ -15,7 +15,7 @@ interface FlashcardProps {
 }
 
 export default function Flashcard({ sentence, onNext }: FlashcardProps) {
-  const { recordAttempt, recordMissedWord } = useStore();
+  const { recordAttempt, recordMissedWord, completedSentences, missedWords, resetProgress } = useStore();
   const { evaluateSimilarity, isReady, isLoading, progress, initModel } = useSemanticJudge();
   
   // Active blanks for this run (randomly selected so we aren't tested on everything every time)
@@ -228,6 +228,26 @@ export default function Flashcard({ sentence, onNext }: FlashcardProps) {
   return (
     <div className="w-full max-w-2xl mx-auto p-6 bg-white dark:bg-gray-800 rounded-xl shadow-lg border border-gray-100 dark:border-gray-700">
       
+      {/* General Stats */}
+      <div className="flex justify-between items-center mb-6 text-sm text-gray-500 dark:text-gray-400 pb-4 border-b border-gray-100 dark:border-gray-700">
+        <div className="flex items-center gap-3">
+          <span>Completed: <span className="font-bold text-blue-600 dark:text-blue-400">{completedSentences}</span></span>
+          <span className="w-px h-4 bg-gray-200 dark:bg-gray-700"></span>
+          <span>Missed: <span className="font-bold text-red-500 dark:text-red-400">{Object.keys(missedWords).length}</span></span>
+        </div>
+        
+        <button 
+          onClick={() => {
+            if (confirm("Are you sure you want to reset your progress?")) {
+              resetProgress();
+            }
+          }}
+          className="text-xs hover:text-red-600 dark:hover:text-red-400 hover:bg-red-50 dark:hover:bg-red-900/30 px-2 py-1 rounded transition-colors"
+        >
+          Reset
+        </button>
+      </div>
+
       {/* Phase 1: Sentence Blanks */}
       <div className="mb-8">
         <h2 className="text-sm font-semibold text-gray-500 dark:text-gray-400 uppercase tracking-wider mb-4">Phase 1: Fill in the Blanks</h2>

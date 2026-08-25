@@ -1,6 +1,7 @@
 import { create } from 'zustand';
 import { persist } from 'zustand/middleware';
 import { sentences } from '../data/sentences';
+import { nouns } from '../data/nouns';
 
 interface ProgressStats {
   attempts: number;
@@ -20,11 +21,13 @@ interface AppState {
   missedWords: Record<string, number>; // word -> count of misses
   // Noun stats tracking
   nounStats: Record<string, NounStats>; // nounId -> stats
+  nounStreak: number;
   
   // Actions
   recordAttempt: (conceptTags: string[], isCorrect: boolean) => void;
   recordMissedWord: (word: string) => void;
   recordNounAttempt: (nounId: string, mode: 'mcq' | 'gender' | 'type', isCorrect: boolean) => void;
+  demoteNounCascade: (nounId: string, activeLevel: number) => void;
   
   // Level filter
   selectedLevel: 'All' | 'A1.1' | 'A1.2' | 'A2';
@@ -48,6 +51,7 @@ export const useStore = create<AppState>()(
       conceptStats: {},
       missedWords: {},
       nounStats: {},
+      nounStreak: 0,
       selectedLevel: 'All',
       completedSentences: 0,
       practiceMode: 'sentences',
@@ -55,7 +59,7 @@ export const useStore = create<AppState>()(
       setPracticeMode: (mode) => set({ practiceMode: mode }),
       setSelectedLevel: (level) => set({ selectedLevel: level }),
       incrementCompletedSentences: () => set((state) => ({ completedSentences: state.completedSentences + 1 })),
-      resetProgress: () => set({ conceptStats: {}, missedWords: {}, nounStats: {}, completedSentences: 0 }),
+      resetProgress: () => set({ conceptStats: {}, missedWords: {}, nounStats: {}, nounStreak: 0, completedSentences: 0 }),
       
       recordNounAttempt: (nounId, mode, isCorrect) => {
         set((state) => {
@@ -70,7 +74,51 @@ export const useStore = create<AppState>()(
             newStats.typeScore = isCorrect ? newStats.typeScore + 1 : Math.max(0, newStats.typeScore - 1);
           }
           
-          return { nounStats: { ...state.nounStats, [nounId]: newStats } };
+          return { 
+            nounStats: { ...state.nounStats, [nounId]: newStats },
+            nounStreak: isCorrect ? state.nounStreak + 1 : 0 
+          };
+        });
+      },
+      
+      demoteNounCascade: (nounId, activeLevel) => {
+        set((state) => {
+          const LEVEL_SIZE = 20;
+          const newNounStats = { ...state.nounStats };
+          
+          // Helper to completely reset a noun
+          const resetNoun = (id: string) => {
+            newNounStats[id] = { mcqScore: 0, genderScore: 0, typeScore: 0 };
+          };
+          
+          // Demote the main failed noun
+          resetNoun(nounId);
+          
+          // Find the level of the failed noun
+          const failedNounIndex = nouns.findIndex(n => n.id === nounId);
+          if (failedNounIndex === -1) return state;
+          
+          const failedLevel = Math.floor(failedNounIndex / LEVEL_SIZE) + 1;
+          
+          // Demote a couple random mastered nouns from the same level
+          const sameLevelNouns = nouns.slice((failedLevel - 1) * LEVEL_SIZE, failedLevel * LEVEL_SIZE);
+          const masteredInLevel = sameLevelNouns.filter(n => newNounStats[n.id]?.typeScore >= 2 && n.id !== nounId);
+          
+          // Pick up to 2 random mastered nouns from this level to demote
+          const shuffledLevel = masteredInLevel.sort(() => Math.random() - 0.5).slice(0, 2);
+          shuffledLevel.forEach(n => resetNoun(n.id));
+          
+          // Now for all levels between failedLevel and activeLevel, demote 1 mastered word
+          for (let l = failedLevel + 1; l <= activeLevel; l++) {
+            const levelNouns = nouns.slice((l - 1) * LEVEL_SIZE, l * LEVEL_SIZE);
+            const mastered = levelNouns.filter(n => newNounStats[n.id]?.typeScore >= 2);
+            if (mastered.length > 0) {
+              const toDemote = mastered[Math.floor(Math.random() * mastered.length)];
+              resetNoun(toDemote.id);
+            }
+          }
+          
+          return { nounStats: newNounStats, nounStreak: 0 };
         });
       },
       
