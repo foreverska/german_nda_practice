@@ -273,7 +273,7 @@ export default function NounCard() {
     <div className="w-full max-w-2xl bg-white dark:bg-gray-800 rounded-2xl shadow-sm border border-gray-100 dark:border-gray-700 transition-colors">
       
       {/* Gamification Header */}
-      <div className="bg-gray-50 dark:bg-gray-900/50 p-6 rounded-t-2xl border-b border-gray-100 dark:border-gray-700 flex flex-col gap-4">
+      <div className="bg-gray-50 dark:bg-gray-900/50 p-6 rounded-t-2xl border-b border-gray-100 dark:border-gray-700 flex flex-col gap-4 select-none cursor-default">
         
         <div className="flex justify-between items-start gap-4">
           <div className="flex flex-col gap-3 flex-1">

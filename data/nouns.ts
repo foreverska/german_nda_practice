@@ -118,7 +118,7 @@ export const nouns: Noun[] = [
     "article": "der",
     "word": "Freund",
     "english": "friend",
-    "emoji": "👨‍🤝‍👨"
+    "emoji": "🍻👨"
   },
   {
     "id": "n122",
@@ -134,7 +134,7 @@ export const nouns: Noun[] = [
     "article": "der",
     "word": "Großvater",
     "english": "grandfather",
-    "emoji": "👴🦯"
+    "emoji": "👴🕰️"
   },
   {
     "id": "n154",
@@ -150,7 +150,7 @@ export const nouns: Noun[] = [
     "article": "der",
     "word": "Opa",
     "english": "grandfather",
-    "emoji": "👴"
+    "emoji": "👴🍬"
   },
   {
     "id": "n221",
@@ -262,7 +262,7 @@ export const nouns: Noun[] = [
     "article": "die",
     "word": "Großmutter",
     "english": "grandmother",
-    "emoji": "👵🫖"
+    "emoji": "👵🧶"
   },
   {
     "id": "n159",
@@ -286,7 +286,7 @@ export const nouns: Noun[] = [
     "article": "die",
     "word": "Oma",
     "english": "grandmother",
-    "emoji": "👵"
+    "emoji": "👵🍪"
   },
   {
     "id": "n216",
@@ -478,7 +478,7 @@ export const nouns: Noun[] = [
     "article": "das",
     "word": "Zimmer",
     "english": "room",
-    "emoji": "🚪🛏️"
+    "emoji": "🛏️🖼️"
   },
   {
     "id": "n11",
@@ -486,7 +486,7 @@ export const nouns: Noun[] = [
     "article": "der",
     "word": "Arzt",
     "english": "doctor",
-    "emoji": "👨‍⚕️🩺"
+    "emoji": "🏥👨‍⚕️"
   },
   {
     "id": "n29",
@@ -526,7 +526,7 @@ export const nouns: Noun[] = [
     "article": "der",
     "word": "Doktor",
     "english": "doctor",
-    "emoji": "👨‍⚕️"
+    "emoji": "📜👨‍⚕️"
   },
   {
     "id": "n104",
@@ -542,7 +542,7 @@ export const nouns: Noun[] = [
     "article": "der",
     "word": "Raum",
     "english": "room",
-    "emoji": "🚪🛋️"
+    "emoji": "🟦📏"
   },
   {
     "id": "n202",
@@ -726,7 +726,7 @@ export const nouns: Noun[] = [
     "article": "die",
     "word": "Stelle",
     "english": "job / position",
-    "emoji": "💼📝"
+    "emoji": "📄🤝"
   },
   {
     "id": "n229",
@@ -742,7 +742,7 @@ export const nouns: Noun[] = [
     "article": "das",
     "word": "Apartment",
     "english": "apartment",
-    "emoji": "🏢"
+    "emoji": "🏢🔑"
   },
   {
     "id": "n14",
@@ -798,7 +798,7 @@ export const nouns: Noun[] = [
     "article": "das",
     "word": "Ende",
     "english": "end",
-    "emoji": "🔚"
+    "emoji": "🏁"
   },
   {
     "id": "n91",
@@ -846,7 +846,7 @@ export const nouns: Noun[] = [
     "article": "das",
     "word": "Gleis",
     "english": "platform",
-    "emoji": "🚉"
+    "emoji": "🛤️🔢"
   },
   {
     "id": "n156",
@@ -894,7 +894,7 @@ export const nouns: Noun[] = [
     "article": "das",
     "word": "Wort",
     "english": "word",
-    "emoji": "🗨️"
+    "emoji": "🔤💬"
   },
   {
     "id": "n54",
@@ -918,7 +918,7 @@ export const nouns: Noun[] = [
     "article": "der",
     "word": "Arbeitsplatz",
     "english": "workplace",
-    "emoji": "💼🏢"
+    "emoji": "🖥️🪑"
   },
   {
     "id": "n10",
@@ -942,7 +942,7 @@ export const nouns: Noun[] = [
     "article": "der",
     "word": "Ausflug",
     "english": "excursion",
-    "emoji": "✈️🧳"
+    "emoji": "🎒🚶‍♂️🏞️"
   },
   {
     "id": "n16",
@@ -958,7 +958,7 @@ export const nouns: Noun[] = [
     "article": "der",
     "word": "Bahnsteig",
     "english": "platform",
-    "emoji": "🛤️🚆"
+    "emoji": "🚶‍♂️🚉"
   },
   {
     "id": "n44",
@@ -1006,7 +1006,7 @@ export const nouns: Noun[] = [
     "article": "der",
     "word": "Dank",
     "english": "thanks",
-    "emoji": "🙏"
+    "emoji": "💐🙌"
   },
   {
     "id": "n69",
@@ -1070,7 +1070,7 @@ export const nouns: Noun[] = [
     "article": "der",
     "word": "Feiertag",
     "english": "bank holiday",
-    "emoji": "🏖️📅"
+    "emoji": "🎉📆"
   },
   {
     "id": "n102",
@@ -1142,7 +1142,7 @@ export const nouns: Noun[] = [
     "article": "der",
     "word": "Partner",
     "english": "(male) partner",
-    "emoji": "👫"
+    "emoji": "🤝❤️"
   },
   {
     "id": "n181",
@@ -1222,7 +1222,7 @@ export const nouns: Noun[] = [
     "article": "der",
     "word": "Text",
     "english": "text",
-    "emoji": "📝"
+    "emoji": "📄〰️"
   },
   {
     "id": "n252",
@@ -1230,7 +1230,7 @@ export const nouns: Noun[] = [
     "article": "der",
     "word": "Urlaub",
     "english": "holiday",
-    "emoji": "🏖️🌴"
+    "emoji": "🧳🌴"
   },
   {
     "id": "n258",
@@ -1246,7 +1246,7 @@ export const nouns: Noun[] = [
     "article": "der",
     "word": "Zug",
     "english": "train",
-    "emoji": "🚂"
+    "emoji": "🚂💨"
   },
   {
     "id": "n3",
@@ -1262,7 +1262,7 @@ export const nouns: Noun[] = [
     "article": "die",
     "word": "Arbeit",
     "english": "work",
-    "emoji": "💼💻"
+    "emoji": "⚙️💪"
   },
   {
     "id": "n12",
@@ -1286,7 +1286,7 @@ export const nouns: Noun[] = [
     "article": "die",
     "word": "Bahn",
     "english": "train",
-    "emoji": "🚆"
+    "emoji": "🚄🛤️"
   },
   {
     "id": "n59",
@@ -1318,7 +1318,7 @@ export const nouns: Noun[] = [
     "article": "die",
     "word": "Entschuldigung",
     "english": "apology",
-    "emoji": "🙏❌"
+    "emoji": "🙇‍♂️"
   },
   {
     "id": "n90",
@@ -1350,7 +1350,7 @@ export const nouns: Noun[] = [
     "article": "die",
     "word": "Freizeit",
     "english": "free time",
-    "emoji": "🏖️"
+    "emoji": "🎮🚲"
   },
   {
     "id": "n119",
@@ -1366,7 +1366,7 @@ export const nouns: Noun[] = [
     "article": "die",
     "word": "Nummer",
     "english": "number",
-    "emoji": "🔢"
+    "emoji": "#️⃣"
   },
   {
     "id": "n176",
@@ -1406,7 +1406,7 @@ export const nouns: Noun[] = [
     "article": "die",
     "word": "Reise",
     "english": "journey / trip",
-    "emoji": "✈️🎒"
+    "emoji": "🧳✈️🌍"
   },
   {
     "id": "n219",
@@ -1438,7 +1438,7 @@ export const nouns: Noun[] = [
     "article": "die",
     "word": "Stunde",
     "english": "hour",
-    "emoji": "🕛"
+    "emoji": "⌛6️⃣0️⃣"
   },
   {
     "id": "n234",
@@ -1462,7 +1462,7 @@ export const nouns: Noun[] = [
     "article": "die",
     "word": "Uhr",
     "english": "o'clock / am / pm",
-    "emoji": "🕒"
+    "emoji": "⌚"
   },
   {
     "id": "n267",
@@ -1470,7 +1470,7 @@ export const nouns: Noun[] = [
     "article": "die",
     "word": "Wohnung",
     "english": "flat",
-    "emoji": "🏢🏠"
+    "emoji": "🛋️🪴"
   },
   {
     "id": "n269",
@@ -1478,7 +1478,7 @@ export const nouns: Noun[] = [
     "article": "die",
     "word": "Zeit",
     "english": "time",
-    "emoji": "⏰"
+    "emoji": "⏳🌌"
   },
   {
     "id": "n270",
@@ -1838,7 +1838,7 @@ export const nouns: Noun[] = [
     "article": "der",
     "word": "Satz",
     "english": "sentence",
-    "emoji": "📝✏️"
+    "emoji": "🔠➡️⏺️"
   },
   {
     "id": "n207",
@@ -1854,7 +1854,7 @@ export const nouns: Noun[] = [
     "article": "der",
     "word": "Schluss",
     "english": "end/conclusion",
-    "emoji": "🔚🔒"
+    "emoji": "🎬🔒"
   },
   {
     "id": "n237",
@@ -1926,7 +1926,7 @@ export const nouns: Noun[] = [
     "article": "die",
     "word": "Bitte",
     "english": "request",
-    "emoji": "🙏🤲"
+    "emoji": "🥺🤲"
   },
   {
     "id": "n46",
@@ -2086,7 +2086,7 @@ export const nouns: Noun[] = [
     "article": "die",
     "word": "S-Bahn",
     "english": "commuter train",
-    "emoji": "🚆🚇"
+    "emoji": "🚇🏙️"
   },
   {
     "id": "n230",
@@ -2110,7 +2110,7 @@ export const nouns: Noun[] = [
     "article": "die",
     "word": "Vorwahl",
     "english": "area code",
-    "emoji": "📞🔢"
+    "emoji": "☎️📍"
   },
   {
     "id": "n262",
@@ -2182,7 +2182,7 @@ export const nouns: Noun[] = [
     "article": "die",
     "word": "Ansage",
     "english": "announcement",
-    "emoji": "🔊📣"
+    "emoji": "🎙️🗣️"
   },
   {
     "id": "n4",
@@ -2206,7 +2206,7 @@ export const nouns: Noun[] = [
     "article": "die",
     "word": "Durchsage",
     "english": "announcement",
-    "emoji": "🔊📢"
+    "emoji": "📢🚉"
   },
   {
     "id": "n148",
