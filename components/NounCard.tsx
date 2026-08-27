@@ -213,9 +213,10 @@ export default function NounCard() {
       return;
     }
     
-    const cleanTyped = normalizeGerman(typedInput);
-    const cleanTarget = normalizeGerman(currentNoun.german);
-    const cleanWord = normalizeGerman(currentNoun.word);
+    const stripPl = (s: string) => s.replace(/\s*\(pl\.\)/gi, '');
+    const cleanTyped = normalizeGerman(stripPl(typedInput));
+    const cleanTarget = normalizeGerman(stripPl(currentNoun.german));
+    const cleanWord = normalizeGerman(stripPl(currentNoun.word));
     
     if (cleanTyped === cleanTarget || cleanTyped === cleanWord) {
       setIsCorrect(true);
