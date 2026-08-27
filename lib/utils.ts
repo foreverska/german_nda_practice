@@ -11,6 +11,9 @@ export function normalizeGerman(str: string): string {
   s = s.replace(/ö/g, 'o').replace(/oe/g, 'o');
   s = s.replace(/ü/g, 'u').replace(/ue/g, 'u');
   s = s.replace(/ß/g, 'ss');
+  // Handle common loanword accents
+  s = s.replace(/[éèê]/g, 'e');
+  s = s.replace(/[áàâ]/g, 'a');
   return s;
 }
 
